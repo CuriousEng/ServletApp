@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-public class AddServlet extends HttpServlet implements first{
+public class AddServlet extends HttpServlet{
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("views/add.jsp");
@@ -26,7 +26,6 @@ public class AddServlet extends HttpServlet implements first{
         model.add(user);
         req.setAttribute("userName", name);
         doGet(req, resp);
-
     }
 
 }
