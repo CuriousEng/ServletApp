@@ -21,9 +21,12 @@ public class AddServlet extends HttpServlet{
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String name = req.getParameter("name");
-        String password = req.getParameter("pass");
-        Errors error = ErrorCounter(name, password); //Считаем ошибки
+        String name = req.getParameter("name").trim();
+        String password = req.getParameter("pass").trim();
+        Errors error = ErrorCounter(name, password); //Проверка на ошибки
+        System.out.println(name);
+        System.out.println(password);
+
         if (error.getCount() == 0) {
             User user = new User(name, password); //добавление пользователя в модель
             Model model = Model.getInstance();
@@ -47,7 +50,7 @@ public class AddServlet extends HttpServlet{
         } if (name.length() < 2) {
             error.setCount(error.getCount() + 1);
             error.setCauses(FailCause.SHORT_NAME_ERROR);
-        } if (Model.getInstance().getModel().contains(name)) {
+        } if (Model.getInstance().getModel().contains(name)) {  //можно было бы использовать множество для уникальности, но зачем?
             error.setCount(error.getCount() + 1);
             error.setCauses(FailCause.BASE_ALREADY_CONTAINS_NAME_ERROR);
         }

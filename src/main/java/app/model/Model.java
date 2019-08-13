@@ -24,9 +24,15 @@ public class Model {
         model.add(user);
     }
 
+    public void remove(String name, String password) {
+        model.remove(model.indexOf(new User(name, password)));
+    }
+
     public List<User> getModel() {
         return model;
     }
+
+
 
     public List<String> list() {
         return model.stream()
