@@ -26,5 +26,7 @@ public class AddServlet extends HttpServlet implements first{
         model.add(user);
         req.setAttribute("userName", name);
         doGet(req, resp);
+
     }
+
 }
