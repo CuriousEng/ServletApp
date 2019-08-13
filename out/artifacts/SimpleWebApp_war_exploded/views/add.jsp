@@ -1,4 +1,5 @@
-<%--
+<%@ page import="app.entities.FailCause" %>
+<%@ page import="java.util.List" %><%--
   Created by IntelliJ IDEA.
   User: root
   Date: 8/6/19
@@ -22,8 +23,22 @@
         <div>
             <div class="w3-container w3-padding">
                 <%
-                    if (request.getAttribute("userName") != null) {
-                        out.println("<p>User '" + request.getAttribute("userName") + "' added!</p>");
+                    if (request.getAttribute("cause") != null) {
+                        List<FailCause> causes= (List<FailCause>)request.getAttribute("cause");
+                        out.println("<div class=\"w3-panel w3-red w3-display-container w3-card-4 w3-round\">\n" +
+                                "   <span onclick=\"this.parentElement.style.display='none'\"\n" +
+                                "   class=\"w3-button w3-margin-right w3-display-right w3-round-large w3-hover-grey w3-border w3-border-grey w3-hover-border-grey\">×</span>\n" +
+                                "   <h5>Невозможно создать пользователя с именем \"" + request.getAttribute("userName") + "\". Causes:");
+                        for (FailCause f: causes) {
+                            out.println("<p>" + f);
+                        }
+                        out.print("</h5>\n</div>");
+                    } else if (request.getAttribute("userName") != null){
+                        out.println("<div class=\"w3-panel w3-green w3-display-container w3-card-4 w3-round\">\n" +
+                                "   <span onclick=\"this.parentElement.style.display='none'\"\n" +
+                                "   class=\"w3-button w3-margin-right w3-display-right w3-round-large w3-hover-gray w3-border w3-border-gray w3-hover-border-grey\">×</span>\n" +
+                                "   <h5>User '" + request.getAttribute("userName") + "' added!</h5>\n" +
+                                "</div>");
                     }
                 %>
             </div>
