@@ -28,7 +28,7 @@
                         out.println("<div class=\"w3-panel w3-red w3-display-container w3-card-4 w3-round\">\n" +
                                 "   <span onclick=\"this.parentElement.style.display='none'\"\n" +
                                 "   class=\"w3-button w3-margin-right w3-display-right w3-round-large w3-hover-grey w3-border w3-border-grey w3-hover-border-grey\">×</span>\n" +
-                                "   <h5>Невозможно найти пользователя с именем \"" + request.getAttribute("userName") + "\". Causes:");
+                                "   <h5>Невозможно удалить пользователя с именем \"" + request.getAttribute("userName") + "\". Causes:");
                         for (FailCause f: causes) {
                             out.println("<p>" + f);
                         }
@@ -55,7 +55,7 @@
                         <label>Password:
                             <input type="password" name="pass" class="w3-input w3-animate-input w3-border w3-round-large" style="width: 30%"><br />
                         </label>
-                        <button type="submit" class="w3-btn w3-green w3-hover-light-blue w3-round-large w3-margin-bottom">Submit</button>
+                        <button type="submit" class="w3-btn w3-green w3-hover-light-blue w3-round-large w3-margin-bottom">Delete</button>
                     </form>
                 </div>
             </div>

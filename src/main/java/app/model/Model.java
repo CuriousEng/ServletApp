@@ -28,6 +28,11 @@ public class Model {
         model.remove(model.indexOf(new User(name, password)));
     }
 
+    public void update(String name, String password, User user){
+        this.remove(name, password);
+        this.add(user);
+    }
+
     public List<User> getModel() {
         return model;
     }
