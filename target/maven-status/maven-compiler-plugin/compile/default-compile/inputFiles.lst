@@ -1,0 +1,8 @@
+/home/code/src/Projects/SimpleWebApp/src/main/java/app/servlets/UpdateServlet.java
+/home/code/src/Projects/SimpleWebApp/src/main/java/app/servlets/ListServlet.java
+/home/code/src/Projects/SimpleWebApp/src/main/java/app/model/Model.java
+/home/code/src/Projects/SimpleWebApp/src/main/java/app/entities/FailCause.java
+/home/code/src/Projects/SimpleWebApp/src/main/java/app/entities/User.java
+/home/code/src/Projects/SimpleWebApp/src/main/java/app/model/Errors.java
+/home/code/src/Projects/SimpleWebApp/src/main/java/app/servlets/AddServlet.java
+/home/code/src/Projects/SimpleWebApp/src/main/java/app/servlets/DeleteServlet.java
